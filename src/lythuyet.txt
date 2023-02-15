@@ -1,0 +1,21 @@
+1. Train.py
+- Conv2D(): Mạng nơ-ron áp dụng bộ lọc cho hình ảnh đầu vào để tạo 
+bản đồ đặc trưng tóm tắt sự hiện diện của các tính năng hoặc mẫu 
+được phát hiện trong đầu vào. Trong trường hợp của chúng ta, 
+có 32, 64, 128 và 128 bộ lọc. Tăng số lượng bộ lọc trên mỗi lớp vì 
+khi di chuyển về phía trước trong các lớp, các mẫu trở nên phức tạp hơn;
+ do đó có nhiều sự kết hợp của các mẫu để chụp. Vì vậy, tăng kích thước
+ bộ lọc trong các lớp tiếp theo để thu được nhiều kết hợp nhất có thể.
+- ReLU: Khi kết thúc hoạt động tích chập, đầu ra có hàm kích hoạt để 
+cho phép non-linearity. Hàm kích hoạt thông thường cho mạng chuyển đổi
+ là Relu. Tất cả pixel có giá trị âm sẽ được thay thế bằng 0.
+- MaxPooling2D(): là thao tác gộp chọn phần tử lớn nhất từ ​​vùng của bản đồ
+ đối tượng được bộ lọc bao phủ. Nói một cách đơn giản trong Maxpooling,
+ chọn giá trị lớn nhất trong ma trận để giảm kích thước hình ảnh mà 
+không làm mất thông tin hình ảnh.
+- Flattern(): Chuyển đổi mảng dữ liệu hình ảnh đa chiều thành arr 1chiều
+- Dense(): Lớp mạng nơ-ron được kết nối đầy đủ trong đó mỗi nút đầu vào
+ được kết nối với mỗi nút đầu ra. Sử dụng lớp này 2 lần một trong lớp 
+ẩn với 1024 noron và sau đó cho lớp đầu ra với một tế bào 
+thần kinh duy nhất và hàm sigmoid để đưa ra dự đoán cuối cùng.
+- DropOut(): Bỏ qua ngẫu nhiên 1 vài đơn vị theo tỷ lệ rate -->chống overFitting
